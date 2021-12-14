@@ -266,7 +266,6 @@ Partial Class f_ModifierCommande
         Me.Panel6.Name = "Panel6"
         Me.Panel6.Size = New System.Drawing.Size(559, 50)
         Me.Panel6.TabIndex = 21
-        Me.Panel6.Visible = False
         '
         'tb_Qte
         '

@@ -33,6 +33,7 @@
     End Sub
 
     Private Sub btn_Modifier_Click(sender As Object, e As EventArgs) Handles btn_Modifier.Click
-
+        f_ModifierCommande.id = dgvCommandes.SelectedRows.Item(0).Cells(0).Value
+        f_ModifierCommande.ShowDialog()
     End Sub
 End Class

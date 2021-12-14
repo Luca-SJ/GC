@@ -36,4 +36,7 @@ Public Class Requetes
         Executer_Requete_Action("Delete from lignedecommande where idCommande = " & idCommande & ";")
         Executer_Requete_Action("Delete from commande where idCommande = " & idCommande & ";")
     End Function
+    Public Shared Function GetInfoSurLaCommande(idCommande As String) As DataTable
+        Return Executer_Requete_Select("select DateCommande, idCli, payeCommande, reductionCommande, tauxReduction from commande where idCommande = " & idCommande & ";")
+    End Function
 End Class
