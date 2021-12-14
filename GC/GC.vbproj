@@ -1,0 +1,242 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A42A0AB5-07D2-4AD6-B547-00BA498BA710}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>GC.My.MyApplication</StartupObject>
+    <RootNamespace>GC</RootNamespace>
+    <AssemblyName>GC</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>GC.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>GC.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MySql.Data">
+      <HintPath>..\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Fonctions.vb" />
+    <Compile Include="f_Accueil.Designer.vb">
+      <DependentUpon>f_Accueil.vb</DependentUpon>
+    </Compile>
+    <Compile Include="f_Accueil.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="f_AjoutClient.Designer.vb">
+      <DependentUpon>f_AjoutClient.vb</DependentUpon>
+    </Compile>
+    <Compile Include="f_AjoutClient.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="f_ConnexionInternaute.Designer.vb">
+      <DependentUpon>f_ConnexionInternaute.vb</DependentUpon>
+    </Compile>
+    <Compile Include="f_ConnexionInternaute.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="f_ChoixTypeClient.Designer.vb">
+      <DependentUpon>f_ChoixTypeClient.vb</DependentUpon>
+    </Compile>
+    <Compile Include="f_ChoixTypeClient.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="f_ConnexionEmploye.Designer.vb">
+      <DependentUpon>f_ConnexionEmploye.vb</DependentUpon>
+    </Compile>
+    <Compile Include="f_ConnexionEmploye.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="f_ConsulterClient.Designer.vb">
+      <DependentUpon>f_ConsulterClient.vb</DependentUpon>
+    </Compile>
+    <Compile Include="f_ConsulterClient.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="f_ConsulterCommande.Designer.vb">
+      <DependentUpon>f_ConsulterCommande.vb</DependentUpon>
+    </Compile>
+    <Compile Include="f_ConsulterCommande.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="f_GererClient.Designer.vb">
+      <DependentUpon>f_GererClient.vb</DependentUpon>
+    </Compile>
+    <Compile Include="f_GererClient.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="f_GererCommande.Designer.vb">
+      <DependentUpon>f_GererCommande.vb</DependentUpon>
+    </Compile>
+    <Compile Include="f_GererCommande.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="f_InscriptionInternaute.Designer.vb">
+      <DependentUpon>f_InscriptionInternaute.vb</DependentUpon>
+    </Compile>
+    <Compile Include="f_InscriptionInternaute.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="f_Principal.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="f_Principal.Designer.vb">
+      <DependentUpon>f_Principal.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="f_Profil.Designer.vb">
+      <DependentUpon>f_Profil.vb</DependentUpon>
+    </Compile>
+    <Compile Include="f_Profil.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="f_SupprimerClient.Designer.vb">
+      <DependentUpon>f_SupprimerClient.vb</DependentUpon>
+    </Compile>
+    <Compile Include="f_SupprimerClient.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GestionBDD.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Requetes.vb" />
+    <Compile Include="Securite.vb" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="f_Accueil.resx">
+      <DependentUpon>f_Accueil.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="f_AjoutClient.resx">
+      <DependentUpon>f_AjoutClient.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="f_ChoixTypeClient.resx">
+      <DependentUpon>f_ChoixTypeClient.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="f_ConnexionEmploye.resx">
+      <DependentUpon>f_ConnexionEmploye.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="f_ConnexionInternaute.resx">
+      <DependentUpon>f_ConnexionInternaute.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="f_ConsulterClient.resx">
+      <DependentUpon>f_ConsulterClient.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="f_ConsulterCommande.resx">
+      <DependentUpon>f_ConsulterCommande.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="f_GererClient.resx">
+      <DependentUpon>f_GererClient.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="f_GererCommande.resx">
+      <DependentUpon>f_GererCommande.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="f_InscriptionInternaute.resx">
+      <DependentUpon>f_InscriptionInternaute.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="f_Principal.resx">
+      <DependentUpon>f_Principal.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="f_Profil.resx">
+      <DependentUpon>f_Profil.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="f_SupprimerClient.resx">
+      <DependentUpon>f_SupprimerClient.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\img_527805-modified.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+</Project>
