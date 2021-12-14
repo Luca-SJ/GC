@@ -53,5 +53,11 @@ Public Class GestionBDD
     Public Shared Function GetLesTuples(table As String)
         Return Executer_Requete_Select("call `GetAllFromTable`('" & table & "')")
     End Function
-
+    Public Shared Sub AlimenterComboBox(ByRef macombo As ComboBox, masource As DataTable, mondisplay As String, mavaleur As String)
+        macombo.DataSource = masource
+        macombo.DisplayMember = mondisplay
+        If mavaleur <> "" Then
+            macombo.ValueMember = mavaleur
+        End If
+    End Sub
 End Class

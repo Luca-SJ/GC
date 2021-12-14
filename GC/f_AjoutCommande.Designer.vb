@@ -24,35 +24,47 @@ Partial Class f_AjoutCommande
     Private Sub InitializeComponent()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.dgvIdCount = New System.Windows.Forms.DataGridView()
-        Me.btnClose = New System.Windows.Forms.Button()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.tbNom = New System.Windows.Forms.TextBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
+        Me.comboB_Client = New System.Windows.Forms.ComboBox()
+        Me.tb_Reduction = New System.Windows.Forms.TextBox()
+        Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.checkB_NonPaye = New System.Windows.Forms.CheckBox()
+        Me.checkB_Paye = New System.Windows.Forms.CheckBox()
         Me.btnAjouter = New System.Windows.Forms.Button()
         Me.Label6 = New System.Windows.Forms.Label()
-        Me.cb_Paye = New System.Windows.Forms.CheckBox()
-        Me.cb_NonPaye = New System.Windows.Forms.CheckBox()
-        Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.Panel5 = New System.Windows.Forms.Panel()
+        Me.btnClose = New System.Windows.Forms.Button()
+        Me.dgvCommande = New System.Windows.Forms.DataGridView()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.comboB_Produit = New System.Windows.Forms.ComboBox()
+        Me.tb_Qte = New System.Windows.Forms.TextBox()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.btn_Ajout = New System.Windows.Forms.Button()
+        Me.Panel6 = New System.Windows.Forms.Panel()
         Me.Panel1.SuspendLayout()
         CType(Me.dgvIdCount, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
+        Me.Panel4.SuspendLayout()
+        Me.Panel5.SuspendLayout()
+        CType(Me.dgvCommande, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel6.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(100, Byte), Integer), CType(CType(100, Byte), Integer))
         Me.Panel1.Controls.Add(Me.dgvIdCount)
-        Me.Panel1.Controls.Add(Me.btnClose)
         Me.Panel1.Controls.Add(Me.Label3)
         Me.Panel1.Controls.Add(Me.Label4)
         Me.Panel1.Controls.Add(Me.Label2)
         Me.Panel1.Controls.Add(Me.Label1)
-        Me.Panel1.Controls.Add(Me.tbNom)
         Me.Panel1.Controls.Add(Me.Panel2)
         Me.Panel1.Location = New System.Drawing.Point(10, 10)
         Me.Panel1.Name = "Panel1"
@@ -67,20 +79,6 @@ Partial Class f_AjoutCommande
         Me.dgvIdCount.Size = New System.Drawing.Size(18, 19)
         Me.dgvIdCount.TabIndex = 14
         Me.dgvIdCount.Visible = False
-        '
-        'btnClose
-        '
-        Me.btnClose.BackColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(75, Byte), Integer))
-        Me.btnClose.FlatAppearance.BorderSize = 0
-        Me.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnClose.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnClose.ForeColor = System.Drawing.Color.White
-        Me.btnClose.Location = New System.Drawing.Point(330, 12)
-        Me.btnClose.Name = "btnClose"
-        Me.btnClose.Size = New System.Drawing.Size(36, 28)
-        Me.btnClose.TabIndex = 13
-        Me.btnClose.Text = "X"
-        Me.btnClose.UseVisualStyleBackColor = False
         '
         'Label3
         '
@@ -130,29 +128,81 @@ Partial Class f_AjoutCommande
         Me.Label1.Text = "DATE"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'tbNom
-        '
-        Me.tbNom.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.tbNom.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.tbNom.Location = New System.Drawing.Point(129, 124)
-        Me.tbNom.Name = "tbNom"
-        Me.tbNom.Size = New System.Drawing.Size(189, 22)
-        Me.tbNom.TabIndex = 0
-        '
         'Panel2
         '
         Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(75, Byte), Integer))
-        Me.Panel2.Controls.Add(Me.ComboBox1)
-        Me.Panel2.Controls.Add(Me.TextBox1)
+        Me.Panel2.Controls.Add(Me.DateTimePicker1)
+        Me.Panel2.Controls.Add(Me.comboB_Client)
+        Me.Panel2.Controls.Add(Me.tb_Reduction)
         Me.Panel2.Controls.Add(Me.Panel3)
-        Me.Panel2.Controls.Add(Me.cb_NonPaye)
-        Me.Panel2.Controls.Add(Me.cb_Paye)
+        Me.Panel2.Controls.Add(Me.checkB_NonPaye)
+        Me.Panel2.Controls.Add(Me.checkB_Paye)
         Me.Panel2.Controls.Add(Me.btnAjouter)
         Me.Panel2.Controls.Add(Me.Label6)
         Me.Panel2.Location = New System.Drawing.Point(51, 63)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(279, 255)
         Me.Panel2.TabIndex = 10
+        '
+        'DateTimePicker1
+        '
+        Me.DateTimePicker1.CustomFormat = "dd/MM/yyyy"
+        Me.DateTimePicker1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!)
+        Me.DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+        Me.DateTimePicker1.Location = New System.Drawing.Point(93, 61)
+        Me.DateTimePicker1.Name = "DateTimePicker1"
+        Me.DateTimePicker1.Size = New System.Drawing.Size(174, 22)
+        Me.DateTimePicker1.TabIndex = 17
+        '
+        'comboB_Client
+        '
+        Me.comboB_Client.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.comboB_Client.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.comboB_Client.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.comboB_Client.FormattingEnabled = True
+        Me.comboB_Client.Location = New System.Drawing.Point(93, 87)
+        Me.comboB_Client.Name = "comboB_Client"
+        Me.comboB_Client.Size = New System.Drawing.Size(174, 24)
+        Me.comboB_Client.TabIndex = 16
+        '
+        'tb_Reduction
+        '
+        Me.tb_Reduction.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.tb_Reduction.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tb_Reduction.Location = New System.Drawing.Point(137, 145)
+        Me.tb_Reduction.Name = "tb_Reduction"
+        Me.tb_Reduction.Size = New System.Drawing.Size(130, 22)
+        Me.tb_Reduction.TabIndex = 15
+        '
+        'Panel3
+        '
+        Me.Panel3.BackColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(100, Byte), Integer), CType(CType(100, Byte), Integer))
+        Me.Panel3.Location = New System.Drawing.Point(160, 115)
+        Me.Panel3.Name = "Panel3"
+        Me.Panel3.Size = New System.Drawing.Size(5, 24)
+        Me.Panel3.TabIndex = 15
+        '
+        'checkB_NonPaye
+        '
+        Me.checkB_NonPaye.AutoSize = True
+        Me.checkB_NonPaye.ForeColor = System.Drawing.Color.White
+        Me.checkB_NonPaye.Location = New System.Drawing.Point(171, 122)
+        Me.checkB_NonPaye.Name = "checkB_NonPaye"
+        Me.checkB_NonPaye.Size = New System.Drawing.Size(73, 17)
+        Me.checkB_NonPaye.TabIndex = 14
+        Me.checkB_NonPaye.Text = "Non Payé"
+        Me.checkB_NonPaye.UseVisualStyleBackColor = True
+        '
+        'checkB_Paye
+        '
+        Me.checkB_Paye.AutoSize = True
+        Me.checkB_Paye.ForeColor = System.Drawing.Color.White
+        Me.checkB_Paye.Location = New System.Drawing.Point(101, 122)
+        Me.checkB_Paye.Name = "checkB_Paye"
+        Me.checkB_Paye.Size = New System.Drawing.Size(50, 17)
+        Me.checkB_Paye.TabIndex = 13
+        Me.checkB_Paye.Text = "Payé"
+        Me.checkB_Paye.UseVisualStyleBackColor = True
         '
         'btnAjouter
         '
@@ -182,60 +232,152 @@ Partial Class f_AjoutCommande
         Me.Label6.Text = "INFORMATIONS"
         Me.Label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'cb_Paye
+        'Panel4
         '
-        Me.cb_Paye.AutoSize = True
-        Me.cb_Paye.Location = New System.Drawing.Point(101, 122)
-        Me.cb_Paye.Name = "cb_Paye"
-        Me.cb_Paye.Size = New System.Drawing.Size(50, 17)
-        Me.cb_Paye.TabIndex = 13
-        Me.cb_Paye.Text = "Payé"
-        Me.cb_Paye.UseVisualStyleBackColor = True
+        Me.Panel4.BackColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(100, Byte), Integer), CType(CType(100, Byte), Integer))
+        Me.Panel4.Controls.Add(Me.Panel5)
+        Me.Panel4.Location = New System.Drawing.Point(396, 10)
+        Me.Panel4.Name = "Panel4"
+        Me.Panel4.Size = New System.Drawing.Size(670, 380)
+        Me.Panel4.TabIndex = 2
         '
-        'cb_NonPaye
+        'Panel5
         '
-        Me.cb_NonPaye.AutoSize = True
-        Me.cb_NonPaye.Location = New System.Drawing.Point(171, 122)
-        Me.cb_NonPaye.Name = "cb_NonPaye"
-        Me.cb_NonPaye.Size = New System.Drawing.Size(73, 17)
-        Me.cb_NonPaye.TabIndex = 14
-        Me.cb_NonPaye.Text = "Non Payé"
-        Me.cb_NonPaye.UseVisualStyleBackColor = True
+        Me.Panel5.BackColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(75, Byte), Integer))
+        Me.Panel5.Controls.Add(Me.Panel6)
+        Me.Panel5.Controls.Add(Me.btnClose)
+        Me.Panel5.Controls.Add(Me.dgvCommande)
+        Me.Panel5.Controls.Add(Me.Label10)
+        Me.Panel5.Location = New System.Drawing.Point(3, 3)
+        Me.Panel5.Name = "Panel5"
+        Me.Panel5.Size = New System.Drawing.Size(664, 374)
+        Me.Panel5.TabIndex = 10
         '
-        'Panel3
+        'btnClose
         '
-        Me.Panel3.BackColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(100, Byte), Integer), CType(CType(100, Byte), Integer))
-        Me.Panel3.Location = New System.Drawing.Point(160, 115)
-        Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(5, 24)
-        Me.Panel3.TabIndex = 15
+        Me.btnClose.BackColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.btnClose.FlatAppearance.BorderSize = 0
+        Me.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnClose.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnClose.ForeColor = System.Drawing.Color.White
+        Me.btnClose.Location = New System.Drawing.Point(616, 9)
+        Me.btnClose.Name = "btnClose"
+        Me.btnClose.Size = New System.Drawing.Size(36, 28)
+        Me.btnClose.TabIndex = 13
+        Me.btnClose.Text = "X"
+        Me.btnClose.UseVisualStyleBackColor = False
         '
-        'TextBox1
+        'dgvCommande
         '
-        Me.TextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox1.Location = New System.Drawing.Point(137, 145)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(130, 22)
-        Me.TextBox1.TabIndex = 15
+        Me.dgvCommande.AllowUserToAddRows = False
+        Me.dgvCommande.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.dgvCommande.BackgroundColor = System.Drawing.Color.White
+        Me.dgvCommande.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.dgvCommande.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
+        Me.dgvCommande.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvCommande.Location = New System.Drawing.Point(53, 60)
+        Me.dgvCommande.Name = "dgvCommande"
+        Me.dgvCommande.ReadOnly = True
+        Me.dgvCommande.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
+        Me.dgvCommande.RowHeadersVisible = False
+        Me.dgvCommande.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.dgvCommande.Size = New System.Drawing.Size(559, 255)
+        Me.dgvCommande.TabIndex = 12
         '
-        'ComboBox1
+        'Label10
         '
-        Me.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.ComboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.ComboBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(93, 87)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(174, 24)
-        Me.ComboBox1.TabIndex = 16
+        Me.Label10.AutoSize = True
+        Me.Label10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Label10.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label10.ForeColor = System.Drawing.Color.White
+        Me.Label10.Location = New System.Drawing.Point(253, 17)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(158, 33)
+        Me.Label10.TabIndex = 11
+        Me.Label10.Text = "PRODUITS"
+        Me.Label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.BackColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(100, Byte), Integer), CType(CType(100, Byte), Integer))
+        Me.Label5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Location = New System.Drawing.Point(-4, 0)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(92, 24)
+        Me.Label5.TabIndex = 18
+        Me.Label5.Text = "PRODUIT"
+        Me.Label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'comboB_Produit
+        '
+        Me.comboB_Produit.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.comboB_Produit.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.comboB_Produit.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.comboB_Produit.FormattingEnabled = True
+        Me.comboB_Produit.Location = New System.Drawing.Point(94, 0)
+        Me.comboB_Produit.Name = "comboB_Produit"
+        Me.comboB_Produit.Size = New System.Drawing.Size(174, 24)
+        Me.comboB_Produit.TabIndex = 19
+        '
+        'tb_Qte
+        '
+        Me.tb_Qte.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.tb_Qte.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tb_Qte.Location = New System.Drawing.Point(402, 2)
+        Me.tb_Qte.Name = "tb_Qte"
+        Me.tb_Qte.Size = New System.Drawing.Size(88, 22)
+        Me.tb_Qte.TabIndex = 18
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.BackColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(100, Byte), Integer), CType(CType(100, Byte), Integer))
+        Me.Label7.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.Location = New System.Drawing.Point(274, 0)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(122, 24)
+        Me.Label7.TabIndex = 20
+        Me.Label7.Text = "QUANTITAIT"
+        Me.Label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'btn_Ajout
+        '
+        Me.btn_Ajout.BackColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(100, Byte), Integer), CType(CType(100, Byte), Integer))
+        Me.btn_Ajout.FlatAppearance.BorderSize = 0
+        Me.btn_Ajout.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn_Ajout.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_Ajout.ForeColor = System.Drawing.Color.White
+        Me.btn_Ajout.Location = New System.Drawing.Point(496, 2)
+        Me.btn_Ajout.Name = "btn_Ajout"
+        Me.btn_Ajout.Size = New System.Drawing.Size(63, 22)
+        Me.btn_Ajout.TabIndex = 18
+        Me.btn_Ajout.Text = "AJOUT"
+        Me.btn_Ajout.UseVisualStyleBackColor = False
+        '
+        'Panel6
+        '
+        Me.Panel6.Controls.Add(Me.tb_Qte)
+        Me.Panel6.Controls.Add(Me.btn_Ajout)
+        Me.Panel6.Controls.Add(Me.comboB_Produit)
+        Me.Panel6.Controls.Add(Me.Label7)
+        Me.Panel6.Controls.Add(Me.Label5)
+        Me.Panel6.Location = New System.Drawing.Point(53, 321)
+        Me.Panel6.Name = "Panel6"
+        Me.Panel6.Size = New System.Drawing.Size(559, 50)
+        Me.Panel6.TabIndex = 21
+        Me.Panel6.Visible = False
         '
         'f_AjoutCommande
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(150, Byte), Integer), CType(CType(150, Byte), Integer), CType(CType(150, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(400, 400)
+        Me.ClientSize = New System.Drawing.Size(1078, 400)
+        Me.Controls.Add(Me.Panel4)
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "f_AjoutCommande"
@@ -246,24 +388,40 @@ Partial Class f_AjoutCommande
         CType(Me.dgvIdCount, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
+        Me.Panel4.ResumeLayout(False)
+        Me.Panel5.ResumeLayout(False)
+        Me.Panel5.PerformLayout()
+        CType(Me.dgvCommande, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel6.ResumeLayout(False)
+        Me.Panel6.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
 
     Friend WithEvents Panel1 As Panel
     Friend WithEvents dgvIdCount As DataGridView
-    Friend WithEvents btnClose As Button
     Friend WithEvents Label3 As Label
     Friend WithEvents Label4 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
-    Friend WithEvents tbNom As TextBox
     Friend WithEvents Panel2 As Panel
     Friend WithEvents btnAjouter As Button
     Friend WithEvents Label6 As Label
     Friend WithEvents Panel3 As Panel
-    Friend WithEvents cb_NonPaye As CheckBox
-    Friend WithEvents cb_Paye As CheckBox
-    Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents ComboBox1 As ComboBox
+    Friend WithEvents checkB_NonPaye As CheckBox
+    Friend WithEvents checkB_Paye As CheckBox
+    Friend WithEvents tb_Reduction As TextBox
+    Friend WithEvents comboB_Client As ComboBox
+    Friend WithEvents DateTimePicker1 As DateTimePicker
+    Friend WithEvents Panel4 As Panel
+    Friend WithEvents btnClose As Button
+    Friend WithEvents Panel5 As Panel
+    Friend WithEvents Label10 As Label
+    Friend WithEvents dgvCommande As DataGridView
+    Friend WithEvents Label7 As Label
+    Friend WithEvents tb_Qte As TextBox
+    Friend WithEvents Label5 As Label
+    Friend WithEvents comboB_Produit As ComboBox
+    Friend WithEvents btn_Ajout As Button
+    Friend WithEvents Panel6 As Panel
 End Class
