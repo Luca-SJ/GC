@@ -32,4 +32,8 @@ Public Class Requetes
     Public Shared Function InsertNewLigneDeCommande(idCommande As String, idProduit As String, Qte As String) As DataTable
         Executer_Requete_Action("Insert into lignedecommande values (" & idCommande & ", " & idProduit & ", " & Qte & ");")
     End Function
+    Public Shared Function DeleteCommande(idCommande As Integer) As DataTable
+        Executer_Requete_Action("Delete from lignedecommande where idCommande = " & idCommande & ";")
+        Executer_Requete_Action("Delete from commande where idCommande = " & idCommande & ";")
+    End Function
 End Class

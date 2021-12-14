@@ -15,9 +15,6 @@
         f_AjoutCommande.ShowDialog()
     End Sub
 
-    Private Sub btnSupprimer_Click(sender As Object, e As EventArgs) Handles btnSupprimer.Click
-        'f_SupprimerClient.ShowDialog()
-    End Sub
     Public Function Rafraichir()
         dgvCommandes.DataSource = GestionBDD.GetLesTuples("commande")
         dgvCommandes.Columns(0).HeaderText = "id"
@@ -27,4 +24,15 @@
         dgvCommandes.Columns(4).HeaderText = "Reduction"
         dgvCommandes.Columns(5).HeaderText = "TauxReduction"
     End Function
+
+    Private Sub btn_Supprimer_Click(sender As Object, e As EventArgs) Handles btn_Supprimer.Click
+        Dim id As Integer = dgvCommandes.SelectedRows.Item(0).Cells(0).Value
+        Requetes.DeleteCommande(id)
+        MessageBox.Show("La commande numéro :" & id & " a bien été supprimé.", "Confirmation", MessageBoxButtons.OK)
+        Rafraichir()
+    End Sub
+
+    Private Sub btn_Modifier_Click(sender As Object, e As EventArgs) Handles btn_Modifier.Click
+
+    End Sub
 End Class

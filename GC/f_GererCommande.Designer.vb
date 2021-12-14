@@ -27,8 +27,9 @@ Partial Class f_GererCommande
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.btn_Supprimer = New System.Windows.Forms.Button()
         Me.dgvCommandes = New System.Windows.Forms.DataGridView()
-        Me.btnSupprimer = New System.Windows.Forms.Button()
+        Me.btn_Modifier = New System.Windows.Forms.Button()
         Me.btnAjouter = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         CType(Me.dgvCommandes, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -81,8 +82,9 @@ Partial Class f_GererCommande
         'GroupBox1
         '
         Me.GroupBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(75, Byte), Integer))
+        Me.GroupBox1.Controls.Add(Me.btn_Supprimer)
         Me.GroupBox1.Controls.Add(Me.dgvCommandes)
-        Me.GroupBox1.Controls.Add(Me.btnSupprimer)
+        Me.GroupBox1.Controls.Add(Me.btn_Modifier)
         Me.GroupBox1.Controls.Add(Me.btnAjouter)
         Me.GroupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.GroupBox1.Location = New System.Drawing.Point(25, 140)
@@ -90,6 +92,20 @@ Partial Class f_GererCommande
         Me.GroupBox1.Size = New System.Drawing.Size(763, 314)
         Me.GroupBox1.TabIndex = 13
         Me.GroupBox1.TabStop = False
+        '
+        'btn_Supprimer
+        '
+        Me.btn_Supprimer.BackColor = System.Drawing.Color.FromArgb(CType(CType(130, Byte), Integer), CType(CType(25, Byte), Integer), CType(CType(25, Byte), Integer))
+        Me.btn_Supprimer.FlatAppearance.BorderSize = 0
+        Me.btn_Supprimer.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn_Supprimer.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_Supprimer.ForeColor = System.Drawing.Color.White
+        Me.btn_Supprimer.Location = New System.Drawing.Point(18, 231)
+        Me.btn_Supprimer.Name = "btn_Supprimer"
+        Me.btn_Supprimer.Size = New System.Drawing.Size(200, 66)
+        Me.btn_Supprimer.TabIndex = 14
+        Me.btn_Supprimer.Text = "SUPPRIMER"
+        Me.btn_Supprimer.UseVisualStyleBackColor = False
         '
         'dgvCommandes
         '
@@ -108,19 +124,19 @@ Partial Class f_GererCommande
         Me.dgvCommandes.Size = New System.Drawing.Size(519, 278)
         Me.dgvCommandes.TabIndex = 13
         '
-        'btnSupprimer
+        'btn_Modifier
         '
-        Me.btnSupprimer.BackColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(125, Byte), Integer), CType(CType(125, Byte), Integer))
-        Me.btnSupprimer.FlatAppearance.BorderSize = 0
-        Me.btnSupprimer.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnSupprimer.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSupprimer.ForeColor = System.Drawing.Color.White
-        Me.btnSupprimer.Location = New System.Drawing.Point(18, 125)
-        Me.btnSupprimer.Name = "btnSupprimer"
-        Me.btnSupprimer.Size = New System.Drawing.Size(200, 100)
-        Me.btnSupprimer.TabIndex = 12
-        Me.btnSupprimer.Text = "SUPPRIMER"
-        Me.btnSupprimer.UseVisualStyleBackColor = False
+        Me.btn_Modifier.BackColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(125, Byte), Integer), CType(CType(125, Byte), Integer))
+        Me.btn_Modifier.FlatAppearance.BorderSize = 0
+        Me.btn_Modifier.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn_Modifier.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_Modifier.ForeColor = System.Drawing.Color.White
+        Me.btn_Modifier.Location = New System.Drawing.Point(18, 125)
+        Me.btn_Modifier.Name = "btn_Modifier"
+        Me.btn_Modifier.Size = New System.Drawing.Size(200, 100)
+        Me.btn_Modifier.TabIndex = 12
+        Me.btn_Modifier.Text = "MODIFIER"
+        Me.btn_Modifier.UseVisualStyleBackColor = False
         '
         'btnAjouter
         '
@@ -165,6 +181,7 @@ Partial Class f_GererCommande
     Friend WithEvents Label1 As Label
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents dgvCommandes As DataGridView
-    Friend WithEvents btnSupprimer As Button
+    Friend WithEvents btn_Modifier As Button
     Friend WithEvents btnAjouter As Button
+    Friend WithEvents btn_Supprimer As Button
 End Class
