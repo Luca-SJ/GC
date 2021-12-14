@@ -47,6 +47,7 @@
     End Sub
 
     Private Sub btnCommandeGerer_Click(sender As Object, e As EventArgs) Handles btnCommandeGerer.Click
+        f_GererCommande.Show()
         panNavLeft.Visible = False
     End Sub
 

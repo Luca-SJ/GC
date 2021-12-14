@@ -27,7 +27,6 @@ Partial Class f_GererClient
         Me.Label1 = New System.Windows.Forms.Label()
         Me.btnAjouter = New System.Windows.Forms.Button()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.Button3 = New System.Windows.Forms.Button()
         Me.dgvClients = New System.Windows.Forms.DataGridView()
         Me.btnSupprimer = New System.Windows.Forms.Button()
         Me.btnMenuNav = New System.Windows.Forms.Button()
@@ -84,7 +83,6 @@ Partial Class f_GererClient
         'GroupBox1
         '
         Me.GroupBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(75, Byte), Integer))
-        Me.GroupBox1.Controls.Add(Me.Button3)
         Me.GroupBox1.Controls.Add(Me.dgvClients)
         Me.GroupBox1.Controls.Add(Me.btnSupprimer)
         Me.GroupBox1.Controls.Add(Me.btnAjouter)
@@ -94,20 +92,6 @@ Partial Class f_GererClient
         Me.GroupBox1.Size = New System.Drawing.Size(763, 314)
         Me.GroupBox1.TabIndex = 12
         Me.GroupBox1.TabStop = False
-        '
-        'Button3
-        '
-        Me.Button3.BackColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(100, Byte), Integer), CType(CType(100, Byte), Integer))
-        Me.Button3.FlatAppearance.BorderSize = 0
-        Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button3.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button3.ForeColor = System.Drawing.Color.White
-        Me.Button3.Location = New System.Drawing.Point(18, 231)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(725, 65)
-        Me.Button3.TabIndex = 14
-        Me.Button3.Text = "ENVOYER CODE PROMO"
-        Me.Button3.UseVisualStyleBackColor = False
         '
         'dgvClients
         '
@@ -123,7 +107,7 @@ Partial Class f_GererClient
         Me.dgvClients.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
         Me.dgvClients.RowHeadersVisible = False
         Me.dgvClients.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvClients.Size = New System.Drawing.Size(519, 206)
+        Me.dgvClients.Size = New System.Drawing.Size(519, 278)
         Me.dgvClients.TabIndex = 13
         '
         'btnSupprimer
@@ -182,6 +166,5 @@ Partial Class f_GererClient
     Friend WithEvents btnAjouter As Button
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents btnSupprimer As Button
-    Friend WithEvents Button3 As Button
     Friend WithEvents dgvClients As DataGridView
 End Class

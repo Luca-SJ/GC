@@ -14,6 +14,21 @@
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -88,6 +103,12 @@
       <DependentUpon>f_AjoutClient.vb</DependentUpon>
     </Compile>
     <Compile Include="f_AjoutClient.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="f_AjoutCommande.Designer.vb">
+      <DependentUpon>f_AjoutCommande.vb</DependentUpon>
+    </Compile>
+    <Compile Include="f_AjoutCommande.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="f_ConnexionInternaute.Designer.vb">
@@ -183,6 +204,9 @@
     <EmbeddedResource Include="f_AjoutClient.resx">
       <DependentUpon>f_AjoutClient.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="f_AjoutCommande.resx">
+      <DependentUpon>f_AjoutCommande.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="f_ChoixTypeClient.resx">
       <DependentUpon>f_ChoixTypeClient.vb</DependentUpon>
     </EmbeddedResource>
@@ -237,6 +261,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\img_527805-modified.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 et x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

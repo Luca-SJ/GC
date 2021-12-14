@@ -26,8 +26,12 @@ Partial Class f_GererCommande
         Me.btnMenuNav = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.dgwClients = New System.Windows.Forms.DataGridView()
-        CType(Me.dgwClients, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.dgvCommandes = New System.Windows.Forms.DataGridView()
+        Me.btnSupprimer = New System.Windows.Forms.Button()
+        Me.btnAjouter = New System.Windows.Forms.Button()
+        Me.GroupBox1.SuspendLayout()
+        CType(Me.dgvCommandes, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'panel1
@@ -74,22 +78,63 @@ Partial Class f_GererCommande
         Me.Label1.TabIndex = 7
         Me.Label1.Text = "GESTION"
         '
-        'dgwClients
+        'GroupBox1
         '
-        Me.dgwClients.AllowUserToAddRows = False
-        Me.dgwClients.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-        Me.dgwClients.BackgroundColor = System.Drawing.Color.White
-        Me.dgwClients.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.dgwClients.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        Me.dgwClients.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgwClients.Location = New System.Drawing.Point(25, 140)
-        Me.dgwClients.Name = "dgwClients"
-        Me.dgwClients.ReadOnly = True
-        Me.dgwClients.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        Me.dgwClients.RowHeadersVisible = False
-        Me.dgwClients.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgwClients.Size = New System.Drawing.Size(763, 314)
-        Me.dgwClients.TabIndex = 9
+        Me.GroupBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(75, Byte), Integer))
+        Me.GroupBox1.Controls.Add(Me.dgvCommandes)
+        Me.GroupBox1.Controls.Add(Me.btnSupprimer)
+        Me.GroupBox1.Controls.Add(Me.btnAjouter)
+        Me.GroupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.GroupBox1.Location = New System.Drawing.Point(25, 140)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(763, 314)
+        Me.GroupBox1.TabIndex = 13
+        Me.GroupBox1.TabStop = False
+        '
+        'dgvCommandes
+        '
+        Me.dgvCommandes.AllowUserToAddRows = False
+        Me.dgvCommandes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.dgvCommandes.BackgroundColor = System.Drawing.Color.White
+        Me.dgvCommandes.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.dgvCommandes.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
+        Me.dgvCommandes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvCommandes.Location = New System.Drawing.Point(224, 19)
+        Me.dgvCommandes.Name = "dgvCommandes"
+        Me.dgvCommandes.ReadOnly = True
+        Me.dgvCommandes.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
+        Me.dgvCommandes.RowHeadersVisible = False
+        Me.dgvCommandes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.dgvCommandes.Size = New System.Drawing.Size(519, 278)
+        Me.dgvCommandes.TabIndex = 13
+        '
+        'btnSupprimer
+        '
+        Me.btnSupprimer.BackColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(125, Byte), Integer), CType(CType(125, Byte), Integer))
+        Me.btnSupprimer.FlatAppearance.BorderSize = 0
+        Me.btnSupprimer.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnSupprimer.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSupprimer.ForeColor = System.Drawing.Color.White
+        Me.btnSupprimer.Location = New System.Drawing.Point(18, 125)
+        Me.btnSupprimer.Name = "btnSupprimer"
+        Me.btnSupprimer.Size = New System.Drawing.Size(200, 100)
+        Me.btnSupprimer.TabIndex = 12
+        Me.btnSupprimer.Text = "SUPPRIMER"
+        Me.btnSupprimer.UseVisualStyleBackColor = False
+        '
+        'btnAjouter
+        '
+        Me.btnAjouter.BackColor = System.Drawing.Color.FromArgb(CType(CType(150, Byte), Integer), CType(CType(150, Byte), Integer), CType(CType(150, Byte), Integer))
+        Me.btnAjouter.FlatAppearance.BorderSize = 0
+        Me.btnAjouter.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnAjouter.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAjouter.ForeColor = System.Drawing.Color.White
+        Me.btnAjouter.Location = New System.Drawing.Point(18, 19)
+        Me.btnAjouter.Name = "btnAjouter"
+        Me.btnAjouter.Size = New System.Drawing.Size(200, 100)
+        Me.btnAjouter.TabIndex = 11
+        Me.btnAjouter.Text = "AJOUTER"
+        Me.btnAjouter.UseVisualStyleBackColor = False
         '
         'f_GererCommande
         '
@@ -97,7 +142,7 @@ Partial Class f_GererCommande
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(810, 492)
-        Me.Controls.Add(Me.dgwClients)
+        Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.btnMenuNav)
@@ -107,7 +152,8 @@ Partial Class f_GererCommande
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "GererCommande"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
-        CType(Me.dgwClients, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox1.ResumeLayout(False)
+        CType(Me.dgvCommandes, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -117,5 +163,8 @@ Partial Class f_GererCommande
     Friend WithEvents btnMenuNav As Button
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
-    Friend WithEvents dgwClients As DataGridView
+    Friend WithEvents GroupBox1 As GroupBox
+    Friend WithEvents dgvCommandes As DataGridView
+    Friend WithEvents btnSupprimer As Button
+    Friend WithEvents btnAjouter As Button
 End Class
