@@ -7,6 +7,7 @@
         GestionBDD.AlimenterComboBox(comboB_Client, Requetes.GetClientEtId(), "NomCompletClient", "idClient")
         GestionBDD.AlimenterComboBox(comboB_Produit, Requetes.GetProduitEtId(), "LibelleProduit", "idProduit")
         dgvCommande.DataSource = Requetes.GetInfosCommande(Requetes.GetNbCommandes().Rows(0).Item(0))
+        comboB_Client.SelectedIndex = -1
     End Sub
 
     Private Sub checkB_Paye_CheckedChanged(sender As Object, e As EventArgs) Handles checkB_Paye.CheckedChanged
@@ -55,5 +56,27 @@
         Panel6.Visible = False
         f_GererCommande.Rafraichir()
         f_Principal.Show()
+    End Sub
+
+    Private Sub tb_Reduction_TextChanged(sender As Object, e As EventArgs) Handles tb_Reduction.TextChanged
+
+    End Sub
+
+    Private Sub comboB_Client_SelectedIndexChanged(sender As Object, e As EventArgs) Handles comboB_Client.SelectedIndexChanged
+
+    End Sub
+
+    Private Sub comboB_Client_SelectedValueChanged(sender As Object, e As EventArgs) Handles comboB_Client.SelectedValueChanged
+        If comboB_Client.SelectedValue = 0 Then
+        Else
+
+            tb_Reduction.Text = Requetes.GetReductionClient(comboB_Client.SelectedValue).Rows(0).Item(0).ToString()
+        End If
+
+    End Sub
+
+    Private Sub checkB_UseReduc_CheckedChanged(sender As Object, e As EventArgs) Handles checkB_UseReduc.CheckedChanged
+        'tb_Reduction.Text = Requetes.GetReductionClient(comboB_Client.SelectedValue).Rows(0).Item(0).ToString()
+        'tb_Reduction.Text = comboB_Client.SelectedValue
     End Sub
 End Class

@@ -48,4 +48,7 @@ Public Class Requetes
     Public Shared Function GetNbProduitCommande(idCommande As Integer) As DataTable
         Return Executer_Requete_Select("Select count(idProduit) as nbrProduit from lignedecommande where idCommande = " & idCommande & ";")
     End Function
+    Public Shared Function GetReductionClient(idCli As Integer) As DataTable
+        Return Executer_Requete_Select("Call GetReducClient(" & idCli & ")")
+    End Function
 End Class

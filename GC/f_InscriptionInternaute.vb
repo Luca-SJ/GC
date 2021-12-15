@@ -13,8 +13,10 @@ Public Class f_InscriptionInternaute
         dgvIdCount.DataSource = Requetes.GetNbClients()
         Dim idCount = dgvIdCount.Rows(0).Cells(0).Value
         Try
-            GestionBDD.Executer_Requete_Action("Insert into client VALUES (" & idCount + 1 & ", '" & tbNom.Text.ToUpper() & "', '" & Fonctions.ToUpperFirstLetter(tbPrenom.Text) & "', '" & tbAdresse.Text.Replace("'", "''") & "', '" & tbCodePostal.Text & "', '" & tbVille.Text.ToUpper() & "')")
-            GestionBDD.Executer_Requete_Action("Insert into internautes VALUES (" & idCount + 1 & ", '" & tbIdentifiant.Text & "', '" & StrHash & "', '" & DateTime.Today.ToString("yyyy-MM-dd") & "')")
+            GestionBDD.Executer_Requete_Action("Call InsertInternaute('" & tbNom.Text.ToUpper() & "', '" & Fonctions.ToUpperFirstLetter(tbPrenom.Text) & "', '" & tbAdresse.Text.Replace("'", "''") & "', '" & tbCodePostal.Text & "', '" & tbVille.Text.ToUpper() & "', '" & tbIdentifiant.Text & "', '" & StrHash & "', '" & DateTime.Today.ToString("yyyy-MM-dd") & "', 0);")
+            'GestionBDD.Executer_Requete_Action("Call InsertInternaute('test1'
+            'GestionBDD.Executer_Requete_Action("Insert into client VALUES (" & idCount + 1 & ", '" & tbNom.Text.ToUpper() & "', '" & Fonctions.ToUpperFirstLetter(tbPrenom.Text) & "', '" & tbAdresse.Text.Replace("'", "''") & "', '" & tbCodePostal.Text & "', '" & tbVille.Text.ToUpper() & "', 0);")
+            'GestionBDD.Executer_Requete_Action("Insert into internautes VALUES (" & idCount + 1 & ", '" & tbIdentifiant.Text & "', '" & StrHash & "', '" & DateTime.Today.ToString("yyyy-MM-dd") & "')")
         Catch ex As Exception
             MessageBox.Show("Une erreur est survenu.", "ERREUR", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
