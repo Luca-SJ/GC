@@ -1,7 +1,7 @@
 ﻿Imports GC.GestionBDD
 Public Class Requetes
     Public Shared Function GetNbClients() As DataTable
-        Return Executer_Requete_Select("select count(idClient) from Client")
+        Return Executer_Requete_Select("select count(idClient) from client")
     End Function
     Public Shared Function GetNbCommandes() As DataTable
         Return Executer_Requete_Select("select max(idCommande) from commande")
@@ -18,7 +18,7 @@ Public Class Requetes
         Return Executer_Requete_Select("select idProduit, LibelleProduit from produit;")
     End Function
     Public Shared Function GetInfosCommande(idCommande As String) As DataTable
-        Return Executer_Requete_Select("select P.LibelleProduit as Produit, LDC.QuantiteCom as Quantitée from produit P, lignedecommande LDC where (P.idProduit = LDC.idProduit) and LDC.idCommande = " & idCommande & ";")
+        Return Executer_Requete_Select("select P.idProduit as Reference, P.LibelleProduit as Produit, LDC.QuantiteCom as Quantitée from produit P, lignedecommande LDC where (P.idProduit = LDC.idProduit) and LDC.idCommande = " & idCommande & ";")
     End Function
 
     Public Shared Function InsertNewCommande(idCommande As String) As DataTable
@@ -30,7 +30,7 @@ Public Class Requetes
     End Function
 
     Public Shared Function InsertNewLigneDeCommande(idCommande As String, idProduit As String, Qte As String) As DataTable
-        Executer_Requete_Action("Insert into lignedecommande values (" & idCommande & ", " & idProduit & ", " & Qte & ");")
+        Executer_Requete_Action("Insert into lignedecommande values (" & idCommande & ", " & idProduit & ", " & Qte & ") ON DUPLICATE KEY UPDATE QuantiteCom=QuantiteCom + " & Qte & ";")
     End Function
     Public Shared Function DeleteCommande(idCommande As Integer) As DataTable
         Executer_Requete_Action("Delete from lignedecommande where idCommande = " & idCommande & ";")
@@ -38,5 +38,14 @@ Public Class Requetes
     End Function
     Public Shared Function GetInfoSurLaCommande(idCommande As String) As DataTable
         Return Executer_Requete_Select("select DateCommande, idCli, payeCommande, reductionCommande, tauxReduction from commande where idCommande = " & idCommande & ";")
+    End Function
+    Public Shared Function RemoveUnProduit(idProduit As String, idCommande As String) As DataTable
+        Executer_Requete_Action("delete from lignedecommande where idCommande = " & idCommande & " and idProduit = " & idProduit & ";")
+    End Function
+    Public Shared Function RemoveUnProduitQte(idProduit As String, idCommande As String, qte As Integer) As DataTable
+        Executer_Requete_Action("update lignedecommande set QuantiteCom = QuantiteCom - " & qte & " where idCommande = " & idCommande & " and idProduit = " & idProduit & ";")
+    End Function
+    Public Shared Function GetNbProduitCommande(idCommande As Integer) As DataTable
+        Return Executer_Requete_Select("Select count(idProduit) as nbrProduit from lignedecommande where idCommande = " & idCommande & ";")
     End Function
 End Class

@@ -23,12 +23,14 @@ Partial Class f_AjoutCommande
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Panel7 = New System.Windows.Forms.Panel()
         Me.dgvIdCount = New System.Windows.Forms.DataGridView()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.checkB_UseReduc = New System.Windows.Forms.CheckBox()
         Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
         Me.comboB_Client = New System.Windows.Forms.ComboBox()
         Me.tb_Reduction = New System.Windows.Forms.TextBox()
@@ -39,27 +41,28 @@ Partial Class f_AjoutCommande
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.Panel5 = New System.Windows.Forms.Panel()
+        Me.Panel6 = New System.Windows.Forms.Panel()
+        Me.tb_Qte = New System.Windows.Forms.TextBox()
+        Me.btn_Ajout = New System.Windows.Forms.Button()
+        Me.comboB_Produit = New System.Windows.Forms.ComboBox()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
         Me.btnClose = New System.Windows.Forms.Button()
         Me.dgvCommande = New System.Windows.Forms.DataGridView()
         Me.Label10 = New System.Windows.Forms.Label()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.comboB_Produit = New System.Windows.Forms.ComboBox()
-        Me.tb_Qte = New System.Windows.Forms.TextBox()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.btn_Ajout = New System.Windows.Forms.Button()
-        Me.Panel6 = New System.Windows.Forms.Panel()
         Me.Panel1.SuspendLayout()
         CType(Me.dgvIdCount, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
         Me.Panel4.SuspendLayout()
         Me.Panel5.SuspendLayout()
-        CType(Me.dgvCommande, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel6.SuspendLayout()
+        CType(Me.dgvCommande, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(100, Byte), Integer), CType(CType(100, Byte), Integer))
+        Me.Panel1.Controls.Add(Me.Panel7)
         Me.Panel1.Controls.Add(Me.dgvIdCount)
         Me.Panel1.Controls.Add(Me.Label3)
         Me.Panel1.Controls.Add(Me.Label4)
@@ -70,6 +73,14 @@ Partial Class f_AjoutCommande
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(380, 380)
         Me.Panel1.TabIndex = 1
+        '
+        'Panel7
+        '
+        Me.Panel7.BackColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.Panel7.Location = New System.Drawing.Point(51, 209)
+        Me.Panel7.Name = "Panel7"
+        Me.Panel7.Size = New System.Drawing.Size(279, 3)
+        Me.Panel7.TabIndex = 16
         '
         'dgvIdCount
         '
@@ -85,11 +96,11 @@ Partial Class f_AjoutCommande
         Me.Label3.AutoSize = True
         Me.Label3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(62, 206)
+        Me.Label3.Location = New System.Drawing.Point(72, 216)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(120, 24)
+        Me.Label3.Size = New System.Drawing.Size(237, 24)
         Me.Label3.TabIndex = 7
-        Me.Label3.Text = "REDUCTION"
+        Me.Label3.Text = "REDUCTION DU COMPTE"
         Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Label4
@@ -131,6 +142,7 @@ Partial Class f_AjoutCommande
         'Panel2
         '
         Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(75, Byte), Integer))
+        Me.Panel2.Controls.Add(Me.checkB_UseReduc)
         Me.Panel2.Controls.Add(Me.DateTimePicker1)
         Me.Panel2.Controls.Add(Me.comboB_Client)
         Me.Panel2.Controls.Add(Me.tb_Reduction)
@@ -143,6 +155,17 @@ Partial Class f_AjoutCommande
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(279, 255)
         Me.Panel2.TabIndex = 10
+        '
+        'checkB_UseReduc
+        '
+        Me.checkB_UseReduc.AutoSize = True
+        Me.checkB_UseReduc.ForeColor = System.Drawing.Color.White
+        Me.checkB_UseReduc.Location = New System.Drawing.Point(194, 189)
+        Me.checkB_UseReduc.Name = "checkB_UseReduc"
+        Me.checkB_UseReduc.Size = New System.Drawing.Size(57, 17)
+        Me.checkB_UseReduc.TabIndex = 18
+        Me.checkB_UseReduc.Text = "Utiliser"
+        Me.checkB_UseReduc.UseVisualStyleBackColor = True
         '
         'DateTimePicker1
         '
@@ -168,10 +191,11 @@ Partial Class f_AjoutCommande
         'tb_Reduction
         '
         Me.tb_Reduction.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.tb_Reduction.Enabled = False
         Me.tb_Reduction.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.tb_Reduction.Location = New System.Drawing.Point(137, 145)
+        Me.tb_Reduction.Location = New System.Drawing.Point(10, 182)
         Me.tb_Reduction.Name = "tb_Reduction"
-        Me.tb_Reduction.Size = New System.Drawing.Size(130, 22)
+        Me.tb_Reduction.Size = New System.Drawing.Size(178, 22)
         Me.tb_Reduction.TabIndex = 15
         '
         'Panel3
@@ -211,11 +235,11 @@ Partial Class f_AjoutCommande
         Me.btnAjouter.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAjouter.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAjouter.ForeColor = System.Drawing.Color.White
-        Me.btnAjouter.Location = New System.Drawing.Point(10, 201)
+        Me.btnAjouter.Location = New System.Drawing.Point(10, 210)
         Me.btnAjouter.Name = "btnAjouter"
         Me.btnAjouter.Size = New System.Drawing.Size(257, 28)
         Me.btnAjouter.TabIndex = 12
-        Me.btnAjouter.Text = "AJOUTER"
+        Me.btnAjouter.Text = "CRÉER COMMANDE"
         Me.btnAjouter.UseVisualStyleBackColor = False
         '
         'Label6
@@ -252,6 +276,79 @@ Partial Class f_AjoutCommande
         Me.Panel5.Name = "Panel5"
         Me.Panel5.Size = New System.Drawing.Size(664, 374)
         Me.Panel5.TabIndex = 10
+        '
+        'Panel6
+        '
+        Me.Panel6.Controls.Add(Me.tb_Qte)
+        Me.Panel6.Controls.Add(Me.btn_Ajout)
+        Me.Panel6.Controls.Add(Me.comboB_Produit)
+        Me.Panel6.Controls.Add(Me.Label7)
+        Me.Panel6.Controls.Add(Me.Label5)
+        Me.Panel6.Location = New System.Drawing.Point(53, 321)
+        Me.Panel6.Name = "Panel6"
+        Me.Panel6.Size = New System.Drawing.Size(559, 50)
+        Me.Panel6.TabIndex = 21
+        Me.Panel6.Visible = False
+        '
+        'tb_Qte
+        '
+        Me.tb_Qte.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.tb_Qte.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tb_Qte.Location = New System.Drawing.Point(386, 2)
+        Me.tb_Qte.Name = "tb_Qte"
+        Me.tb_Qte.Size = New System.Drawing.Size(88, 22)
+        Me.tb_Qte.TabIndex = 18
+        '
+        'btn_Ajout
+        '
+        Me.btn_Ajout.BackColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(100, Byte), Integer), CType(CType(100, Byte), Integer))
+        Me.btn_Ajout.FlatAppearance.BorderSize = 0
+        Me.btn_Ajout.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn_Ajout.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_Ajout.ForeColor = System.Drawing.Color.White
+        Me.btn_Ajout.Location = New System.Drawing.Point(480, 2)
+        Me.btn_Ajout.Name = "btn_Ajout"
+        Me.btn_Ajout.Size = New System.Drawing.Size(76, 22)
+        Me.btn_Ajout.TabIndex = 18
+        Me.btn_Ajout.Text = "AJOUT"
+        Me.btn_Ajout.UseVisualStyleBackColor = False
+        '
+        'comboB_Produit
+        '
+        Me.comboB_Produit.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.comboB_Produit.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.comboB_Produit.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.comboB_Produit.FormattingEnabled = True
+        Me.comboB_Produit.Location = New System.Drawing.Point(94, 0)
+        Me.comboB_Produit.Name = "comboB_Produit"
+        Me.comboB_Produit.Size = New System.Drawing.Size(174, 24)
+        Me.comboB_Produit.TabIndex = 19
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.BackColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(100, Byte), Integer), CType(CType(100, Byte), Integer))
+        Me.Label7.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.Location = New System.Drawing.Point(274, 0)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(106, 24)
+        Me.Label7.TabIndex = 20
+        Me.Label7.Text = "QUANTITÉ"
+        Me.Label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.BackColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(100, Byte), Integer), CType(CType(100, Byte), Integer))
+        Me.Label5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Location = New System.Drawing.Point(-4, 0)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(92, 24)
+        Me.Label5.TabIndex = 18
+        Me.Label5.Text = "PRODUIT"
+        Me.Label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'btnClose
         '
@@ -298,79 +395,6 @@ Partial Class f_AjoutCommande
         Me.Label10.Text = "PRODUITS"
         Me.Label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.BackColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(100, Byte), Integer), CType(CType(100, Byte), Integer))
-        Me.Label5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(-4, 0)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(92, 24)
-        Me.Label5.TabIndex = 18
-        Me.Label5.Text = "PRODUIT"
-        Me.Label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'comboB_Produit
-        '
-        Me.comboB_Produit.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.comboB_Produit.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.comboB_Produit.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.comboB_Produit.FormattingEnabled = True
-        Me.comboB_Produit.Location = New System.Drawing.Point(94, 0)
-        Me.comboB_Produit.Name = "comboB_Produit"
-        Me.comboB_Produit.Size = New System.Drawing.Size(174, 24)
-        Me.comboB_Produit.TabIndex = 19
-        '
-        'tb_Qte
-        '
-        Me.tb_Qte.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.tb_Qte.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.tb_Qte.Location = New System.Drawing.Point(386, 2)
-        Me.tb_Qte.Name = "tb_Qte"
-        Me.tb_Qte.Size = New System.Drawing.Size(88, 22)
-        Me.tb_Qte.TabIndex = 18
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.BackColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(100, Byte), Integer), CType(CType(100, Byte), Integer))
-        Me.Label7.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(274, 0)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(106, 24)
-        Me.Label7.TabIndex = 20
-        Me.Label7.Text = "QUANTITÉ"
-        Me.Label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'btn_Ajout
-        '
-        Me.btn_Ajout.BackColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(100, Byte), Integer), CType(CType(100, Byte), Integer))
-        Me.btn_Ajout.FlatAppearance.BorderSize = 0
-        Me.btn_Ajout.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btn_Ajout.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_Ajout.ForeColor = System.Drawing.Color.White
-        Me.btn_Ajout.Location = New System.Drawing.Point(480, 2)
-        Me.btn_Ajout.Name = "btn_Ajout"
-        Me.btn_Ajout.Size = New System.Drawing.Size(76, 22)
-        Me.btn_Ajout.TabIndex = 18
-        Me.btn_Ajout.Text = "AJOUT"
-        Me.btn_Ajout.UseVisualStyleBackColor = False
-        '
-        'Panel6
-        '
-        Me.Panel6.Controls.Add(Me.tb_Qte)
-        Me.Panel6.Controls.Add(Me.btn_Ajout)
-        Me.Panel6.Controls.Add(Me.comboB_Produit)
-        Me.Panel6.Controls.Add(Me.Label7)
-        Me.Panel6.Controls.Add(Me.Label5)
-        Me.Panel6.Location = New System.Drawing.Point(53, 321)
-        Me.Panel6.Name = "Panel6"
-        Me.Panel6.Size = New System.Drawing.Size(559, 50)
-        Me.Panel6.TabIndex = 21
-        Me.Panel6.Visible = False
-        '
         'f_AjoutCommande
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -391,9 +415,9 @@ Partial Class f_AjoutCommande
         Me.Panel4.ResumeLayout(False)
         Me.Panel5.ResumeLayout(False)
         Me.Panel5.PerformLayout()
-        CType(Me.dgvCommande, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel6.ResumeLayout(False)
         Me.Panel6.PerformLayout()
+        CType(Me.dgvCommande, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -424,4 +448,6 @@ Partial Class f_AjoutCommande
     Friend WithEvents comboB_Produit As ComboBox
     Friend WithEvents btn_Ajout As Button
     Friend WithEvents Panel6 As Panel
+    Friend WithEvents checkB_UseReduc As CheckBox
+    Friend WithEvents Panel7 As Panel
 End Class

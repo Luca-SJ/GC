@@ -7,8 +7,8 @@ Public Class f_InscriptionInternaute
         Dim HashofBytes() As Byte = New System.Security.Cryptography.SHA1Managed().ComputeHash(Bytes)
         Dim StrHash As String = Convert.ToBase64String(HashofBytes)
 
-        GestionBDD.Machaine = "Data Source=localhost;Initial Catalog=localgc;User ID=" & "root" & ";Password=" & "" & ";"
-        'GestionBDD.Machaine = "Data Source=sio2.btssio.net;Initial Catalog=mehraein1;User ID=" & "mehraein" & ";Password=" & "ixmfi" & ";"
+        'GestionBDD.Machaine = "Data Source=localhost;Initial Catalog=localgc;User ID=" & "root" & ";Password=" & "" & ";"
+        GestionBDD.Machaine = "Data Source=sio2.btssio.net;Initial Catalog=mehraein1;User ID=" & "mehraein" & ";Password=" & "ixmfi" & ";"
         GestionBDD.SeConnecter()
         dgvIdCount.DataSource = Requetes.GetNbClients()
         Dim idCount = dgvIdCount.Rows(0).Cells(0).Value

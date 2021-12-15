@@ -48,6 +48,8 @@ Partial Class f_ModifierCommande
         Me.btnClose = New System.Windows.Forms.Button()
         Me.dgvCommande = New System.Windows.Forms.DataGridView()
         Me.Label10 = New System.Windows.Forms.Label()
+        Me.btn_Suppr = New System.Windows.Forms.Button()
+        Me.btn_SupprQte = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         CType(Me.dgvIdCount, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
@@ -170,6 +172,7 @@ Partial Class f_ModifierCommande
         'tb_Reduction
         '
         Me.tb_Reduction.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.tb_Reduction.Enabled = False
         Me.tb_Reduction.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tb_Reduction.Location = New System.Drawing.Point(137, 145)
         Me.tb_Reduction.Name = "tb_Reduction"
@@ -257,14 +260,16 @@ Partial Class f_ModifierCommande
         '
         'Panel6
         '
+        Me.Panel6.Controls.Add(Me.btn_SupprQte)
+        Me.Panel6.Controls.Add(Me.btn_Suppr)
         Me.Panel6.Controls.Add(Me.tb_Qte)
         Me.Panel6.Controls.Add(Me.btn_Ajout)
         Me.Panel6.Controls.Add(Me.comboB_Produit)
         Me.Panel6.Controls.Add(Me.Label7)
         Me.Panel6.Controls.Add(Me.Label5)
-        Me.Panel6.Location = New System.Drawing.Point(53, 321)
+        Me.Panel6.Location = New System.Drawing.Point(53, 276)
         Me.Panel6.Name = "Panel6"
-        Me.Panel6.Size = New System.Drawing.Size(559, 50)
+        Me.Panel6.Size = New System.Drawing.Size(559, 95)
         Me.Panel6.TabIndex = 21
         '
         'tb_Qte
@@ -355,7 +360,7 @@ Partial Class f_ModifierCommande
         Me.dgvCommande.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
         Me.dgvCommande.RowHeadersVisible = False
         Me.dgvCommande.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvCommande.Size = New System.Drawing.Size(559, 255)
+        Me.dgvCommande.Size = New System.Drawing.Size(559, 210)
         Me.dgvCommande.TabIndex = 12
         '
         'Label10
@@ -371,6 +376,34 @@ Partial Class f_ModifierCommande
         Me.Label10.TabIndex = 11
         Me.Label10.Text = "PRODUITS"
         Me.Label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'btn_Suppr
+        '
+        Me.btn_Suppr.BackColor = System.Drawing.Color.FromArgb(CType(CType(150, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.btn_Suppr.FlatAppearance.BorderSize = 0
+        Me.btn_Suppr.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn_Suppr.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_Suppr.ForeColor = System.Drawing.Color.White
+        Me.btn_Suppr.Location = New System.Drawing.Point(386, 28)
+        Me.btn_Suppr.Name = "btn_Suppr"
+        Me.btn_Suppr.Size = New System.Drawing.Size(170, 22)
+        Me.btn_Suppr.TabIndex = 21
+        Me.btn_Suppr.Text = "SUPPRIMER TOUT"
+        Me.btn_Suppr.UseVisualStyleBackColor = False
+        '
+        'btn_SupprQte
+        '
+        Me.btn_SupprQte.BackColor = System.Drawing.Color.FromArgb(CType(CType(150, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.btn_SupprQte.FlatAppearance.BorderSize = 0
+        Me.btn_SupprQte.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn_SupprQte.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_SupprQte.ForeColor = System.Drawing.Color.White
+        Me.btn_SupprQte.Location = New System.Drawing.Point(386, 56)
+        Me.btn_SupprQte.Name = "btn_SupprQte"
+        Me.btn_SupprQte.Size = New System.Drawing.Size(170, 22)
+        Me.btn_SupprQte.TabIndex = 22
+        Me.btn_SupprQte.Text = "SUPPRIMER QUANTITÉ"
+        Me.btn_SupprQte.UseVisualStyleBackColor = False
         '
         'f_ModifierCommande
         '
@@ -425,4 +458,6 @@ Partial Class f_ModifierCommande
     Friend WithEvents btnClose As Button
     Friend WithEvents dgvCommande As DataGridView
     Friend WithEvents Label10 As Label
+    Friend WithEvents btn_Suppr As Button
+    Friend WithEvents btn_SupprQte As Button
 End Class

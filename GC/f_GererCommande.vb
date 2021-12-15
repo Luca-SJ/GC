@@ -10,6 +10,7 @@
     End Sub
 
     Private Sub btnAjouter_Click(sender As Object, e As EventArgs) Handles btnAjouter.Click
+        f_Principal.Hide()
         Dim id As Integer = Requetes.GetNbCommandes().Rows(0).Item(0)
         Requetes.InsertNewCommande(id + 1)
         f_AjoutCommande.ShowDialog()
@@ -33,6 +34,7 @@
     End Sub
 
     Private Sub btn_Modifier_Click(sender As Object, e As EventArgs) Handles btn_Modifier.Click
+        f_Principal.Hide()
         f_ModifierCommande.id = dgvCommandes.SelectedRows.Item(0).Cells(0).Value
         f_ModifierCommande.ShowDialog()
     End Sub
