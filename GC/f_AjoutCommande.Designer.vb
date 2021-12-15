@@ -41,7 +41,6 @@ Partial Class f_AjoutCommande
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.Panel5 = New System.Windows.Forms.Panel()
-        Me.Panel6 = New System.Windows.Forms.Panel()
         Me.tb_Qte = New System.Windows.Forms.TextBox()
         Me.btn_Ajout = New System.Windows.Forms.Button()
         Me.comboB_Produit = New System.Windows.Forms.ComboBox()
@@ -50,13 +49,18 @@ Partial Class f_AjoutCommande
         Me.btnClose = New System.Windows.Forms.Button()
         Me.dgvCommande = New System.Windows.Forms.DataGridView()
         Me.Label10 = New System.Windows.Forms.Label()
+        Me.Panel6 = New System.Windows.Forms.Panel()
+        Me.tb_Total = New System.Windows.Forms.TextBox()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.Panel8 = New System.Windows.Forms.Panel()
         Me.Panel1.SuspendLayout()
         CType(Me.dgvIdCount, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
         Me.Panel4.SuspendLayout()
         Me.Panel5.SuspendLayout()
-        Me.Panel6.SuspendLayout()
         CType(Me.dgvCommande, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel6.SuspendLayout()
+        Me.Panel8.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel1
@@ -64,7 +68,6 @@ Partial Class f_AjoutCommande
         Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(100, Byte), Integer), CType(CType(100, Byte), Integer))
         Me.Panel1.Controls.Add(Me.Panel7)
         Me.Panel1.Controls.Add(Me.dgvIdCount)
-        Me.Panel1.Controls.Add(Me.Label3)
         Me.Panel1.Controls.Add(Me.Label4)
         Me.Panel1.Controls.Add(Me.Label2)
         Me.Panel1.Controls.Add(Me.Label1)
@@ -94,9 +97,10 @@ Partial Class f_AjoutCommande
         'Label3
         '
         Me.Label3.AutoSize = True
+        Me.Label3.BackColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(100, Byte), Integer), CType(CType(100, Byte), Integer))
         Me.Label3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(72, 216)
+        Me.Label3.Location = New System.Drawing.Point(5, 6)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(237, 24)
         Me.Label3.TabIndex = 7
@@ -142,10 +146,8 @@ Partial Class f_AjoutCommande
         'Panel2
         '
         Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(75, Byte), Integer))
-        Me.Panel2.Controls.Add(Me.checkB_UseReduc)
         Me.Panel2.Controls.Add(Me.DateTimePicker1)
         Me.Panel2.Controls.Add(Me.comboB_Client)
-        Me.Panel2.Controls.Add(Me.tb_Reduction)
         Me.Panel2.Controls.Add(Me.Panel3)
         Me.Panel2.Controls.Add(Me.checkB_NonPaye)
         Me.Panel2.Controls.Add(Me.checkB_Paye)
@@ -160,7 +162,7 @@ Partial Class f_AjoutCommande
         '
         Me.checkB_UseReduc.AutoSize = True
         Me.checkB_UseReduc.ForeColor = System.Drawing.Color.White
-        Me.checkB_UseReduc.Location = New System.Drawing.Point(194, 189)
+        Me.checkB_UseReduc.Location = New System.Drawing.Point(126, 42)
         Me.checkB_UseReduc.Name = "checkB_UseReduc"
         Me.checkB_UseReduc.Size = New System.Drawing.Size(57, 17)
         Me.checkB_UseReduc.TabIndex = 18
@@ -193,9 +195,9 @@ Partial Class f_AjoutCommande
         Me.tb_Reduction.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.tb_Reduction.Enabled = False
         Me.tb_Reduction.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.tb_Reduction.Location = New System.Drawing.Point(10, 182)
+        Me.tb_Reduction.Location = New System.Drawing.Point(5, 37)
         Me.tb_Reduction.Name = "tb_Reduction"
-        Me.tb_Reduction.Size = New System.Drawing.Size(178, 22)
+        Me.tb_Reduction.Size = New System.Drawing.Size(115, 22)
         Me.tb_Reduction.TabIndex = 15
         '
         'Panel3
@@ -268,6 +270,7 @@ Partial Class f_AjoutCommande
         'Panel5
         '
         Me.Panel5.BackColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(75, Byte), Integer))
+        Me.Panel5.Controls.Add(Me.Panel8)
         Me.Panel5.Controls.Add(Me.Panel6)
         Me.Panel5.Controls.Add(Me.btnClose)
         Me.Panel5.Controls.Add(Me.dgvCommande)
@@ -276,19 +279,6 @@ Partial Class f_AjoutCommande
         Me.Panel5.Name = "Panel5"
         Me.Panel5.Size = New System.Drawing.Size(664, 374)
         Me.Panel5.TabIndex = 10
-        '
-        'Panel6
-        '
-        Me.Panel6.Controls.Add(Me.tb_Qte)
-        Me.Panel6.Controls.Add(Me.btn_Ajout)
-        Me.Panel6.Controls.Add(Me.comboB_Produit)
-        Me.Panel6.Controls.Add(Me.Label7)
-        Me.Panel6.Controls.Add(Me.Label5)
-        Me.Panel6.Location = New System.Drawing.Point(53, 321)
-        Me.Panel6.Name = "Panel6"
-        Me.Panel6.Size = New System.Drawing.Size(559, 50)
-        Me.Panel6.TabIndex = 21
-        Me.Panel6.Visible = False
         '
         'tb_Qte
         '
@@ -378,7 +368,7 @@ Partial Class f_AjoutCommande
         Me.dgvCommande.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
         Me.dgvCommande.RowHeadersVisible = False
         Me.dgvCommande.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvCommande.Size = New System.Drawing.Size(559, 255)
+        Me.dgvCommande.Size = New System.Drawing.Size(559, 149)
         Me.dgvCommande.TabIndex = 12
         '
         'Label10
@@ -394,6 +384,56 @@ Partial Class f_AjoutCommande
         Me.Label10.TabIndex = 11
         Me.Label10.Text = "PRODUITS"
         Me.Label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Panel6
+        '
+        Me.Panel6.Controls.Add(Me.tb_Qte)
+        Me.Panel6.Controls.Add(Me.btn_Ajout)
+        Me.Panel6.Controls.Add(Me.comboB_Produit)
+        Me.Panel6.Controls.Add(Me.Label7)
+        Me.Panel6.Controls.Add(Me.Label5)
+        Me.Panel6.Location = New System.Drawing.Point(53, 214)
+        Me.Panel6.Name = "Panel6"
+        Me.Panel6.Size = New System.Drawing.Size(559, 66)
+        Me.Panel6.TabIndex = 21
+        Me.Panel6.Visible = False
+        '
+        'tb_Total
+        '
+        Me.tb_Total.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.tb_Total.Enabled = False
+        Me.tb_Total.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tb_Total.Location = New System.Drawing.Point(452, 11)
+        Me.tb_Total.Name = "tb_Total"
+        Me.tb_Total.Size = New System.Drawing.Size(104, 22)
+        Me.tb_Total.TabIndex = 22
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.BackColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(100, Byte), Integer), CType(CType(100, Byte), Integer))
+        Me.Label8.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.Location = New System.Drawing.Point(374, 11)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(72, 24)
+        Me.Label8.TabIndex = 21
+        Me.Label8.Text = "TOTAL"
+        Me.Label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Panel8
+        '
+        Me.Panel8.BackColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.Panel8.Controls.Add(Me.tb_Reduction)
+        Me.Panel8.Controls.Add(Me.Label8)
+        Me.Panel8.Controls.Add(Me.Label3)
+        Me.Panel8.Controls.Add(Me.tb_Total)
+        Me.Panel8.Controls.Add(Me.checkB_UseReduc)
+        Me.Panel8.Location = New System.Drawing.Point(53, 286)
+        Me.Panel8.Name = "Panel8"
+        Me.Panel8.Size = New System.Drawing.Size(559, 79)
+        Me.Panel8.TabIndex = 23
+        Me.Panel8.Visible = False
         '
         'f_AjoutCommande
         '
@@ -415,9 +455,11 @@ Partial Class f_AjoutCommande
         Me.Panel4.ResumeLayout(False)
         Me.Panel5.ResumeLayout(False)
         Me.Panel5.PerformLayout()
+        CType(Me.dgvCommande, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel6.ResumeLayout(False)
         Me.Panel6.PerformLayout()
-        CType(Me.dgvCommande, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel8.ResumeLayout(False)
+        Me.Panel8.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -447,7 +489,10 @@ Partial Class f_AjoutCommande
     Friend WithEvents Label5 As Label
     Friend WithEvents comboB_Produit As ComboBox
     Friend WithEvents btn_Ajout As Button
-    Friend WithEvents Panel6 As Panel
     Friend WithEvents checkB_UseReduc As CheckBox
     Friend WithEvents Panel7 As Panel
+    Friend WithEvents Panel6 As Panel
+    Friend WithEvents Label8 As Label
+    Friend WithEvents tb_Total As TextBox
+    Friend WithEvents Panel8 As Panel
 End Class

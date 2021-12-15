@@ -51,4 +51,8 @@ Public Class Requetes
     Public Shared Function GetReductionClient(idCli As Integer) As DataTable
         Return Executer_Requete_Select("Call GetReducClient(" & idCli & ")")
     End Function
+    Public Shared Function GetPrixProdQte(idProduit As Integer, Qte As Integer) As DataTable
+        Return Executer_Requete_Select("select (" & Qte & " * PrixHTProduit) from produit where idProduit = " & idProduit & "")
+    End Function
+
 End Class
