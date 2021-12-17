@@ -54,5 +54,7 @@ Public Class Requetes
     Public Shared Function GetPrixProdQte(idProduit As Integer, Qte As Integer) As DataTable
         Return Executer_Requete_Select("select (" & Qte & " * PrixHTProduit) from produit where idProduit = " & idProduit & "")
     End Function
-
+    Public Shared Function getLesProduits() As DataTable
+        Return Executer_Requete_Select("select * from produit")
+    End Function
 End Class

@@ -36,8 +36,8 @@ Public Class ConnexionInternaute
                 Try
 
                     If cmd.ExecuteScalar() = 1 Then
-                        f_Accueil.Show()
-                        Me.Close()
+                    f_passerCommandeInternaute.Show()
+                    Me.Close()
 
                     Else
                         MessageBox.Show("Identifiant ou mot de passe incorrect.", "ERREUR", MessageBoxButtons.OK, MessageBoxIcon.Error)

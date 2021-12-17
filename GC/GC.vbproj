@@ -165,6 +165,12 @@
     <Compile Include="f_ModifierCommande.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="f_passerCommandeInternaute.Designer.vb">
+      <DependentUpon>f_passerCommandeInternaute.vb</DependentUpon>
+    </Compile>
+    <Compile Include="f_passerCommandeInternaute.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="f_Principal.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -239,6 +245,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="f_ModifierCommande.resx">
       <DependentUpon>f_ModifierCommande.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="f_passerCommandeInternaute.resx">
+      <DependentUpon>f_passerCommandeInternaute.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="f_Principal.resx">
       <DependentUpon>f_Principal.vb</DependentUpon>
