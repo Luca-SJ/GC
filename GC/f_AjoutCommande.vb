@@ -84,6 +84,12 @@
     End Sub
 
     Private Sub checkB_UseReduc_CheckedChanged(sender As Object, e As EventArgs) Handles checkB_UseReduc.CheckedChanged
+        Dim totalBase As Decimal = tb_Total.Text
+        If checkB_UseReduc.Checked Then
+            tb_Total.Text = tb_Total.Text - tb_Reduction.Text
+        Else
+            tb_Total.Text = totalBase
+        End If
 
     End Sub
 

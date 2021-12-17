@@ -51,11 +51,11 @@ Partial Class f_Accueil
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 36.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(221, 38)
+        Me.Label1.Location = New System.Drawing.Point(289, 38)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(369, 55)
+        Me.Label1.Size = New System.Drawing.Size(233, 55)
         Me.Label1.TabIndex = 2
-        Me.Label1.Text = "STATISTIQUES"
+        Me.Label1.Text = "ACCUEIL"
         '
         'panel1
         '
@@ -72,11 +72,11 @@ Partial Class f_Accueil
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.White
-        Me.Label2.Location = New System.Drawing.Point(348, 93)
+        Me.Label2.Location = New System.Drawing.Point(257, 93)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(115, 29)
+        Me.Label2.Size = New System.Drawing.Size(296, 29)
         Me.Label2.TabIndex = 7
-        Me.Label2.Text = "CLIENTS"
+        Me.Label2.Text = "STATISTIQUES CLIENTS"
         '
         'ComboBox1
         '
