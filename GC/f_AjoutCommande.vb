@@ -1,4 +1,5 @@
 ﻿Public Class f_AjoutCommande
+    Dim prixTotal As Decimal
     Private Sub btnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
         Me.Close()
     End Sub
@@ -45,7 +46,6 @@
     End Sub
 
     Private Sub btn_Ajout_Click(sender As Object, e As EventArgs) Handles btn_Ajout.Click
-        Dim prixTotal As Decimal
         Requetes.InsertNewLigneDeCommande(Requetes.GetNbCommandes().Rows(0).Item(0), comboB_Produit.SelectedValue, tb_Qte.Text)
         dgvCommande.DataSource = Requetes.GetInfosCommande(Requetes.GetNbCommandes().Rows(0).Item(0))
         For Each ligne As DataGridViewRow In dgvCommande.Rows
@@ -54,7 +54,12 @@
             Dim lignePrix As Decimal = Requetes.GetPrixProdQte(idProduit, qte).Rows(0).Item(0)
             prixTotal = prixTotal + lignePrix
         Next
-        tb_Total.Text = prixTotal
+
+        If checkB_UseReduc.Checked Then
+            tb_Total.Text = prixTotal - tb_Reduction.Text
+        Else
+            tb_Total.Text = prixTotal
+        End If
     End Sub
 
     Private Sub f_AjoutCommande_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
@@ -69,6 +74,7 @@
         tb_Qte.Text = ""
         tb_Total.Text = ""
         f_Principal.Show()
+        prixTotal = 0
     End Sub
 
     Private Sub tb_Reduction_TextChanged(sender As Object, e As EventArgs) Handles tb_Reduction.TextChanged
@@ -84,11 +90,10 @@
     End Sub
 
     Private Sub checkB_UseReduc_CheckedChanged(sender As Object, e As EventArgs) Handles checkB_UseReduc.CheckedChanged
-        Dim totalBase As Decimal = tb_Total.Text
         If checkB_UseReduc.Checked Then
             tb_Total.Text = tb_Total.Text - tb_Reduction.Text
         Else
-            tb_Total.Text = totalBase
+            tb_Total.Text = prixTotal
         End If
 
     End Sub
