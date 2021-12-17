@@ -55,13 +55,13 @@ Public Class Requetes
         Return Executer_Requete_Select("select (" & Qte & " * PrixHTProduit) from produit where idProduit = " & idProduit & "")
     End Function
     Public Shared Function getLesProduits() As DataTable
-        Return Executer_Requete_Select("select * from produit")
+        Return Executer_Requete_Select("select idProduit as Référence, LibelleProduit as Nom, PrixHTProduit as 'Prix (HT)', QteStockProduit as 'Quantitée en stock' from produit")
     End Function
     Public Shared Function getIdInternaute(login As String) As DataTable
         Return Executer_Requete_Select("select idClient from internautes where login like '" & login & "'")
     End Function
     Public Shared Function getCommandeByIdCli(idCli As String) As DataTable
-        Return Executer_Requete_Select("select * from commande where idCli = " & idCli & "")
+        Return Executer_Requete_Select("select idCommande as 'Référence Commande', DateCommande as 'Date de la commande', idCli as 'Identifiant client', payeCommande as 'Status paiement', reductionCommande as 'Reduction utilisé', tauxReduction as 'Taux de Réduction' from commande where idCli = " & idCli & "")
     End Function
 
 End Class
