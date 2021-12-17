@@ -57,4 +57,11 @@ Public Class Requetes
     Public Shared Function getLesProduits() As DataTable
         Return Executer_Requete_Select("select * from produit")
     End Function
+    Public Shared Function getIdInternaute(login As String) As DataTable
+        Return Executer_Requete_Select("select idClient from internautes where login like '" & login & "'")
+    End Function
+    Public Shared Function getCommandeByIdCli(idCli As String) As DataTable
+        Return Executer_Requete_Select("select * from commande where idCli = " & idCli & "")
+    End Function
+
 End Class

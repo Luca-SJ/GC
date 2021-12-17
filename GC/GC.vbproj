@@ -159,6 +159,12 @@
     <Compile Include="f_InscriptionInternaute.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="f_mesCommandesInternaute.Designer.vb">
+      <DependentUpon>f_mesCommandesInternaute.vb</DependentUpon>
+    </Compile>
+    <Compile Include="f_mesCommandesInternaute.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="f_ModifierCommande.Designer.vb">
       <DependentUpon>f_ModifierCommande.vb</DependentUpon>
     </Compile>
@@ -242,6 +248,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="f_InscriptionInternaute.resx">
       <DependentUpon>f_InscriptionInternaute.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="f_mesCommandesInternaute.resx">
+      <DependentUpon>f_mesCommandesInternaute.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="f_ModifierCommande.resx">
       <DependentUpon>f_ModifierCommande.vb</DependentUpon>

@@ -35,12 +35,13 @@ Public Class ConnexionInternaute
 
                 Try
 
-                    If cmd.ExecuteScalar() = 1 Then
+                If cmd.ExecuteScalar() = 1 Then
+                    f_passerCommandeInternaute.login = tbIdentifiant.Text
                     f_passerCommandeInternaute.Show()
                     Me.Close()
 
-                    Else
-                        MessageBox.Show("Identifiant ou mot de passe incorrect.", "ERREUR", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                Else
+                    MessageBox.Show("Identifiant ou mot de passe incorrect.", "ERREUR", MessageBoxButtons.OK, MessageBoxIcon.Error)
 
                     End If
 
