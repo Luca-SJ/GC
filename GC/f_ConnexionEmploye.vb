@@ -1,6 +1,7 @@
 ﻿Public Class ConnexionEmploye
     Private Sub f_Connexion_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.MdiParent = f_Principal
+        tbIdentifiant.Focus()
     End Sub
 
     Private Sub btnConnexion_Click(sender As Object, e As EventArgs) Handles btnConnexion.Click
@@ -18,5 +19,17 @@
         ChoixTypeClient.Show()
         ChoixTypeClient.WindowState = WindowState.Maximized
         Me.Close()
+    End Sub
+
+    Private Sub tbIdentifiant_KeyUp(sender As Object, e As KeyEventArgs) Handles tbIdentifiant.KeyUp
+        If e.KeyCode = 13 Then
+            tbMotDePasse.Focus()
+        End If
+    End Sub
+
+    Private Sub tbMotDePasse_KeyUp(sender As Object, e As KeyEventArgs) Handles tbMotDePasse.KeyUp
+        If e.KeyCode = 13 Then
+            btnConnexion.PerformClick()
+        End If
     End Sub
 End Class
